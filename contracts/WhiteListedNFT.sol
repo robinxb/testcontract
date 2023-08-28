@@ -48,7 +48,7 @@ contract WhiteListedNFT is ERC721Enumerable, Ownable {
         _minted[msg.sender] = true;
         currentTokenId++;
 
-        _mint(msg.sender, currentTokenId);
+        _safeMint(msg.sender, currentTokenId);
     }
 
     function hasMinted(address user) external view returns (bool) {
